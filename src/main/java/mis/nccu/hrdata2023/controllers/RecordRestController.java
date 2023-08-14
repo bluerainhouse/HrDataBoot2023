@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import mis.nccu.hrdata2023.models.Record;
-import mis.nccu.hrdata2023.security.services.RecordService;
+import mis.nccu.hrdata2023.services.RecordService;
 
 @RestController
 @RequestMapping("/api/record")
@@ -50,7 +50,7 @@ public class RecordRestController {
 		return recordService.getAllByLogin(login);
 	}
 	
-	@GetMapping("/record/{recordId}")
+	@GetMapping("/{recordId}")
 	public Record getRecordById(@PathVariable int recordId) {
 		return recordService.getById(recordId);
 	}

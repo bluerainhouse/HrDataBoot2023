@@ -1,6 +1,5 @@
 package mis.nccu.hrdata2023.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,14 +12,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 import mis.nccu.hrdata2023.models.Record;
 import mis.nccu.hrdata2023.payload.request.RecordRequest;
-import mis.nccu.hrdata2023.payload.request.SignupRequest;
 import mis.nccu.hrdata2023.services.RecordService;
 
 @RestController
@@ -45,7 +42,6 @@ public class RecordRestController {
 		record.setI2(i2);
 		record.setI3(i3);
 		recordService.saveOrUpdate(record);
-		System.out.println("created");
 	}
 	
 	@PostMapping("/")

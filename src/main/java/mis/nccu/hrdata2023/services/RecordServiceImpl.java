@@ -19,10 +19,9 @@ public class RecordServiceImpl implements RecordService {
 		return recordRepository.findAll();
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public Record getById(int id) {
-		return recordRepository.getOne(id);
+		return recordRepository.getReferenceById(id);
 	}
 
 	@Override
